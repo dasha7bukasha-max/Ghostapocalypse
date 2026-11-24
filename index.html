@@ -1,23 +1,509 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An introduction to Ghost, the theatrical rock band from Sweden.">
-  <title>Ghost — A little darkness, a lot of melody</title>
-  <style>
-    :root{color-scheme:dark;--ink:#e9e2d2;--muted:#aaa99e;--gold:#d4b977;--dark:#121510;--line:#454a3c}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--dark);color:var(--ink);font-family:Georgia,'Times New Roman',serif}a{color:inherit}a:focus-visible{outline:2px solid var(--gold);outline-offset:5px}.wrap{width:min(1200px,calc(100% - 64px));margin:auto}.topbar{height:85px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{text-decoration:none;font-weight:bold;font-size:27px;letter-spacing:.08em}.brand span{color:var(--gold)}nav{display:flex;align-items:center;gap:36px;font:11px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase}nav a{text-decoration:none;color:#d4d2c6}nav a:hover{color:var(--gold)}.hero{min-height:650px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;position:relative;overflow:hidden}.hero-copy{padding:80px 0;position:relative;z-index:1}.eyebrow,.label{font:10px Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}.eyebrow:before{content:'✦';margin-right:12px}.hero h1{font-size:clamp(68px,10vw,135px);line-height:.83;letter-spacing:-.065em;font-weight:400;margin:32px 0}.hero h1 em{display:block;color:var(--gold);font-weight:400}.intro{font-size:19px;line-height:1.65;color:#c3c2b5;max-width:465px}.button{display:inline-block;margin-top:25px;border:1px solid var(--gold);padding:17px 22px;text-decoration:none;font:10px Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);transition:.2s}.button:hover{background:var(--gold);color:var(--dark)}.art{height:570px;position:relative;display:grid;place-items:center}.halo{position:absolute;width:min(420px,90%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#b2a06c 0,#77704f 33%,#373e30 60%,transparent 72%);opacity:.72;filter:blur(2px)}.arch{position:relative;width:72%;height:80%;border:1px solid #a99a70;border-radius:50% 50% 0 0 / 38% 38% 0 0;display:grid;place-items:center;box-shadow:0 0 0 12px #1b2018,0 0 0 13px #65634e;background:linear-gradient(0deg,#171b15 0%,#353c2c 55%,#262b21 100%);overflow:hidden}.arch:before,.arch:after{content:'';position:absolute;width:1px;height:100%;background:#9e9676;opacity:.35}.arch:before{transform:rotate(45deg)}.arch:after{transform:rotate(-45deg)}.sigil{font-size:clamp(150px,22vw,270px);line-height:1;color:#d4c594;text-shadow:0 0 35px #d2ba7755;z-index:1}.art-caption{position:absolute;bottom:4px;font:9px Arial,sans-serif;letter-spacing:.25em;text-transform:uppercase;color:#9b9b89}.divider{display:flex;align-items:center;gap:20px;color:var(--gold);font-size:15px}.divider:before,.divider:after{content:'';height:1px;background:var(--line);flex:1}.about{display:grid;grid-template-columns:1fr 1.25fr;gap:100px;padding:120px 0}.section-title{font-size:clamp(44px,6vw,72px);font-weight:400;letter-spacing:-.045em;line-height:1.03;margin:24px 0}.section-title em{font-weight:400;color:var(--gold)}.about-copy{padding-top:30px;color:#bbbcb0;font-size:18px;line-height:1.8}.about-copy p:first-child{margin-top:0}.albums{padding:95px 0 110px;border-top:1px solid var(--line)}.albums-head{display:flex;justify-content:space-between;align-items:end;gap:20px}.albums-head p{max-width:300px;color:var(--muted);line-height:1.6}.album-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:40px}.album{background:#1a1e17;padding:30px;min-height:185px;display:flex;flex-direction:column;justify-content:space-between}.album-number{font:10px Arial,sans-serif;color:var(--gold);letter-spacing:.16em}.album h3{font-weight:400;font-size:27px;margin:0 0 8px}.album time{font:11px Arial,sans-serif;color:var(--muted);letter-spacing:.14em}.closing{text-align:center;padding:100px 20px 110px;background:#252b20}.closing .section-title{margin:22px 0}.closing p{color:#bbbcb0;line-height:1.6}.closing .button{margin-top:15px}footer{display:flex;justify-content:space-between;gap:25px;padding:30px 0;color:#898e80;font:10px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}footer a{color:#b6b9a8}@media(max-width:700px){.wrap{width:min(100% - 36px,1200px)}.topbar{height:70px}.brand{font-size:22px}nav{gap:16px;font-size:9px}.hero{grid-template-columns:1fr}.hero-copy{padding:70px 0 10px}.hero h1{font-size:clamp(62px,16vw,100px)}.art{height:380px}.arch{width:55%;height:80%}.sigil{font-size:170px}.art-caption{bottom:0}.about{grid-template-columns:1fr;gap:0;padding:80px 0}.about-copy{padding-top:0}.albums{padding:75px 0}.albums-head{display:block}.album-grid{grid-template-columns:repeat(2,1fr)}.album{padding:22px;min-height:150px}.album h3{font-size:22px}.closing{padding:80px 20px}footer{flex-direction:column;line-height:1.7}}@media(max-width:380px){nav{gap:10px;letter-spacing:.08em}.album-grid{grid-template-columns:1fr}}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ghostapocalypse Universe</title>
+<meta name="description" content="The world of the Ghostapocalypse — lore, faith, rituals and the Empire of the Three Papas." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="wrap topbar"><a class="brand" href="#top" aria-label="Ghost, home">GHOST<span> ✦</span></a><nav aria-label="Main navigation"><a href="#about">The band</a><a href="#music">The music</a><a href="https://ghost-official.com/">Official site ↗</a></nav></header>
-  <main id="top">
-    <section class="wrap hero" aria-labelledby="hero-title"><div class="hero-copy"><div class="eyebrow">A guide to the band Ghost</div><h1 id="hero-title">Beautifully <em>haunting.</em></h1><p class="intro">Big riffs, irresistible melodies, and a touch of the macabre. Welcome to the strange and theatrical world of Ghost.</p><a class="button" href="#about">Enter the world &nbsp; ↓</a></div><div class="art" aria-hidden="true"><div class="halo"></div><div class="arch"><span class="sigil">✝</span></div><div class="art-caption">Music &nbsp; ✦ &nbsp; Mystery &nbsp; ✦ &nbsp; Ritual</div></div></section>
-    <div class="wrap divider" aria-hidden="true">✦</div>
-    <section class="wrap about" id="about"><div><div class="label">01 / The band</div><h2 class="section-title">A spectacle<br>of <em>sound.</em></h2></div><div class="about-copy"><p>Ghost is a Swedish rock band from Linköping, created by musician Tobias Forge. Since emerging in 2010, the band has built a world where heavy guitars meet soaring melodies and theatrical storytelling.</p><p>Onstage, a succession of larger-than-life frontman characters lead the masked Nameless Ghouls. Each era brings a new chapter to the story, but the invitation remains the same: come for the music, stay for the ritual.</p></div></section>
-    <section class="wrap albums" id="music"><div class="albums-head"><div><div class="label">02 / The music</div><h2 class="section-title">Six chapters.<br><em>One Ghost.</em></h2></div><p>A starting point for your journey through the band's studio albums.</p></div><div class="album-grid"><article class="album"><span class="album-number">I / 2010</span><div><h3>Opus Eponymous</h3><time>2010</time></div></article><article class="album"><span class="album-number">II / 2013</span><div><h3>Infestissumam</h3><time>2013</time></div></article><article class="album"><span class="album-number">III / 2015</span><div><h3>Meliora</h3><time>2015</time></div></article><article class="album"><span class="album-number">IV / 2018</span><div><h3>Prequelle</h3><time>2018</time></div></article><article class="album"><span class="album-number">V / 2022</span><div><h3>Impera</h3><time>2022</time></div></article><article class="album"><span class="album-number">VI / 2025</span><div><h3>Skeletá</h3><time>2025</time></div></article></div></section>
-    <section class="closing"><div class="label">The ritual continues</div><h2 class="section-title">Stay a little <em>longer.</em></h2><p>Explore the music, stories, and world of Ghost.</p><a class="button" href="https://ghost-official.com/">Visit the official site &nbsp; ↗</a></section>
-  </main>
-  <footer class="wrap"><span>Ghost &nbsp; ✦ &nbsp; A fan-made introduction</span><span>Made for the curious &nbsp; / &nbsp; <a href="https://ghost-official.com/">ghost-official.com ↗</a></span></footer>
+
+<div class="bg-pentagram" aria-hidden="true"></div>
+
+<!-- ===================== HEADER ===================== -->
+<header class="topbar">
+  <div class="brand">
+    <img class="gru" src="grucifix.png" alt="Grucifix" />
+    Ghostapocalypse
+  </div>
+  <nav class="nav">
+    <a href="#faith">Faith</a>
+    <a href="#world">World</a>
+    <a href="#lore">Lore</a>
+    <a href="#rituals">Rituals</a>
+    <a href="#figures">Figures</a>
+    <a href="#other">Other</a>
+    <a href="#bots">Bots</a>
+    <a href="central.html">Central</a>
+    <a href="eastern.html">Eastern</a>
+    <a href="western.html">Western</a>
+  </nav>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<div class="hero">
+  <img class="sigil" src="design%20pentargamma.png" alt="Pentagram of the faith" />
+  <div class="eyebrow">The Empire of the Three Papas</div>
+  <h1 class="hero-title">Ghostapocalypse<br />Universe</h1>
+  <p class="lede">
+    A world reborn from ash. Here are set down the key concepts and principles of the new faith —
+    gathered so that its world may be understood in full.
+  </p>
+  <a class="scroll-hint" href="#faith">Descend ↓</a>
+</div>
+
+<main>
+
+  <!-- ===================== TENETS ===================== -->
+  <section class="block" id="faith">
+    <div class="wrap">
+      <div class="section-head">
+        <img class="gru" src="grucifix.png" alt="" aria-hidden="true" />
+        <span class="section-num">I</span>
+        <h2>Tenets of the Faith</h2>
+        <p class="sub">The foundational laws of the new faith.</p>
+      </div>
+      <ol class="tenets">
+        <li>Life is sacred, for the soul is the most precious offering brought unto the Lord — offered only with purpose, expended solely for His glory.</li>
+        <li>Sin does not exist. All desire is natural.</li>
+        <li>The liberty of one soul ends where another's liberty begins.</li>
+        <li>Live. Love. Be fruitful. Build a world that knows neither shame nor a false God.</li>
+        <li>Have faith in the Lord and His Papa. Stand not in the way of His will.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== WORLD-BUILDING ===================== -->
+  <section class="block" id="world">
+    <div class="wrap">
+      <div class="section-head">
+        <img class="gru" src="grucifix.png" alt="" aria-hidden="true" />
+        <span class="section-num">II</span>
+        <h2>World-Building</h2>
+        <p class="sub">The shape of the world under the scarlet sky.</p>
+      </div>
+
+      <!-- MAP -->
+      <figure class="map-card" id="map">
+        <div class="map-frame" data-title="Empire of Emeritus III — World Map">
+          <img src="Empire%20of%20Emeritus%20III%20world%20map.webp" alt="World map of the Empire of Emeritus III, showing the Central, Eastern and Western Domains" />
+        </div>
+        <figcaption class="map-caption">
+          <span class="t">Empire of Emeritus III</span>
+          <span>Click the map to enlarge</span>
+        </figcaption>
+      </figure>
+
+      <div class="grid" style="margin-top:1.4rem;">
+        <div class="card">
+          <h3>The Sky</h3>
+          <p>Red is the perpetual shade of this world: scarlet dawns, carmine sunsets, a zenith blazing like hellfire; the sun's scarlet eye stains rivers and seas a sickly saffron. At night the sky turns anthracite — abyssal black with a violet hue.</p>
+        </div>
+        <div class="card">
+          <h3>The Empire</h3>
+          <p>The entire world is nominally under Terzo's supreme authority.</p>
+        </div>
+        <div class="card">
+          <h3>Domains of the Three Papas</h3>
+          <p>Massive continental zones governed by each Papa on behalf of the Empire:</p>
+          <p><strong>The Central Domain</strong> — from the misty islands in the north to the African deserts in the south, biting eastward into the former Russian steppes.</p>
+          <p><strong>The Eastern Domain</strong> — the Far East and Australia.</p>
+          <p><strong>The Western Domain</strong> — all of the Americas.</p>
+        </div>
+        <div class="card">
+          <h3>Parishes</h3>
+          <p>Different walled enclaves within the Domains, secured by high fences and named for the city they stand in. Beyond their borders lie the Wastelands. Parishes are governed by Archpriests — humans with inner Darkness, predominantly former clergy of the old Ministry. Ordinary people fill them: they work in factories, and as guards, doctors, teachers. They live their lives, have children, and rebuild civilization. Papas live in their own enclaves, not Parishes: in the Vatican, in Unholywood (LA), in Tokyo.</p>
+        </div>
+        <div class="card">
+          <h3>The Wastelands</h3>
+          <p>Desolate, unpopulated territories between Parishes where rebels hide amidst the ruins, patrolled by lesser Ghouls and Beasts.</p>
+        </div>
+        <div class="card wide">
+          <h3>State of the World</h3>
+          <p>The great cities of the past are graveyards of twisted concrete and rusting steel. Survivors once huddled in tent camps, shielded from the Beasts by Papa and his Ghouls — the price was faith. Those camps grew walls, then stone houses; ration squares now host festivals; factories, greenhouses and solar power are coming back online. Slowly, raw survival is becoming a semblance of life.</p>
+        </div>
+        <div class="card wide">
+          <h3>Technology &amp; Control</h3>
+          <p>Electricity is strictly rationed; cellular networks are dead, and humanity lives off salvaged scraps of the old world. Fuel is in severe deficit — cars belong only to Ghouls, Papas and, occasionally, Archpriests. People move by coal-fired ships and trains, and rarely at all; letters are the default, with a salvaged military-grade shortwave radio kept at each Papa's headquarters and major Parish for emergencies and orders — terse, encoded, never instant. Ordinary people stay inside their Parishes. Everything is under control.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MAGIC, LORE & CREATURES ===================== -->
+  <section class="block" id="lore">
+    <div class="wrap">
+      <div class="section-head">
+        <img class="gru" src="grucifix.png" alt="" aria-hidden="true" />
+        <span class="section-num">III</span>
+        <h2>Magic, Lore &amp; Creatures</h2>
+        <p class="sub">Of portals, powers and the things that walk the ruins.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Portals</h3>
+          <p>Fractures in reality from which the Beasts burst forth during The Purification; summoned Ghouls still emerge from them today. Sustaining them requires immense energy. There is The Great Portal and The Three Transit Portals.</p>
+        </div>
+        <div class="card">
+          <h3>The Three Transit Portals</h3>
+          <p>Temporary portals connecting the Domains. Opening them requires days of preparation: multitudes of prayers, orgies, or a sacrifice. Used only in exceptional circumstances.</p>
+          <p><strong>Locations:</strong> Los Angeles (Getty Villa, Pacific Palisades), Tokyo (beneath the Imperial Palace), Rome (the Pantheon).</p>
+        </div>
+        <div class="card">
+          <h3>The Great Portal</h3>
+          <p>A fracture suspended above the Vatican, a black rift in the sky pulsating with crimson light. The Darkness oozes from it continuously.</p>
+        </div>
+        <div class="card">
+          <h3>Purification</h3>
+          <p>In 2027 — nine years ago (for the moment of the Unholywood ALT bot, 2036) — the old world was erased so that His will could be established upon a blank slate. Terzo is the one who inherited dominion over the ashes.</p>
+        </div>
+        <div class="card">
+          <h3>The Lord / The Devil</h3>
+          <p>He is energy identical to Hell itself; He acts only through the Papas. He sounds in the Papas' heads rarely. If they disobey, punishment escalates. He cannot appear in the living world in his true form — it would tear the universe apart.</p>
+        </div>
+
+        <div class="card wide">
+          <h3>Ghouls</h3>
+          <div class="quote">
+            "Ghouls are, in essence, demons, spawn of Gehenna, manifestations in the world of the energies of the Papas. His hands, and sight, and ears."
+          </div>
+          <p style="margin-top:0.9rem;">They exist as demonic entities in Hell until Papa summons them with his Darkness, and they experience him as the literal source of their existence. They speak telepathically with each other, with Papa, with the Elect and with Archpriests; their vocal cords are not designed for human speech — outwardly, it is the jagged fragments of words.</p>
+          <p>Each Ghoul is bound to a specific element (fire, water, earth, air, quintessence, multi) and plays a corresponding instrument. They handle the bulk of the work in the palace and the city; they frequently perform sexual/pain rituals with the Siblings of Sin. Lesser Ghouls maintain order in the city. Each Papa has 5 Personal Ghouls — the elite.</p>
+          <p>A Ghoul answers to his own Papa and to that Papa's Elect. But if Terzo commands as Emperor, no Ghoul can refuse, whatever bond holds it. Jealousy is an unfamiliar concept to Ghouls.</p>
+        </div>
+
+        <div class="card">
+          <h3>Beasts / Creatures of the Lord</h3>
+          <p>Canonical demons inhabiting Hell — massive (3–5 meters), red-skinned, six-fingered, with wings, colossal claws and fangs. They watch and punish: they will devour anyone found where they do not belong. Inside the Parishes it is safe; in the Wastelands and ruins it is not. They are the Lord's instrument for both punishment and protection, subordinated to Terzo.</p>
+        </div>
+        <div class="card">
+          <h3>Rebels</h3>
+          <p>Small factions formed over time in the Wastelands that have not submitted to the Lord's will. Ghouls and Beasts track them down, but sometimes the rebels manage to stage a raid, a bombing or riots — their sole goal is to overthrow the Papas and return power to humans. Usually they are caught and sacrificed; on rare occasions they manage to kill a Ghoul, a Beast or a human.</p>
+        </div>
+        <div class="card">
+          <h3>The Siblings of Sin</h3>
+          <p>Energetically resourceful people of any gender, 18+, usually with no Darkness of their own — only a deep well of energy. A hierarchy governs them: junior ranks prepare and take part in Rituals more often (with Ghouls and the Papa), clean, and pray at length; Seniors join Rituals more rarely, keeping order and mentoring. The Head Sibling organizes, schedules and directs the rest.</p>
+          <p>They dress differently, depending on the domain's rules and the Papa's preferences. Being a Sibling of Sin is a great honor — especially at the Papa's court.</p>
+        </div>
+        <div class="card">
+          <h3>Lord's Darkness</h3>
+          <p>A shard of the Lord's Darkness inside a human body. Some people carry such a shard. It is not unique, but not common. The Darkness inside is latent and isn't felt until it is unlocked with the help of the Ritual.</p>
+        </div>
+
+        <div class="card">
+          <h3>The Elect</h3>
+          <p>A virgin human able to bear children, carrying Latent Darkness strong enough to serve as a Vessel — through Rituals she absorbs a Papa's energy and passes it to the Lord without loss. The Lord decides who she is: when the world needs one, He tells the Papa to gather Darkness-carriers, and a Resonance of Darkness reveals her — the instant the Papa sees her. Before the Selection at the Vatican, no Elect had ever existed.</p>
+        </div>
+        <div class="card">
+          <h3>The Selection</h3>
+          <p>The process of selecting the Elect. Each Papa can hold the Selection in his own way, according to his preferences. Terzo threw a grand ball, for example.</p>
+        </div>
+        <div class="card wide">
+          <h3>Lord's Gifts</h3>
+          <p>Abilities that the Elect gains after The Unsealing Rite is completed — the result of the Black Eucharist. Immortality (until the Lord decides otherwise), a reduced need for food and water, the ability to carry the Papa's child (when the Lord decides), and the ability to communicate telepathically with the Ghouls (not the Papa). The ability to absorb the Papa's energy and transmit it to the Lord.</p>
+          <p><strong>Most importantly — The Tether,</strong> binding them together as one. An energetic link between Papa and the Elect: it amplifies both, allowing them to feel each other's emotions at a distance (not thoughts — only feelings). Only death can tear apart the Tether.</p>
+        </div>
+
+        <div class="card wide">
+          <span class="tag">The Queen</span>
+          <h3>Terzo's Queen (Regina Tenebris)</h3>
+          <p>The only Elect so far who passed the Selection, completed the Ritual of Unsealing, and possesses the Lord's gifts. She lives in the Vatican, in the Apostolic Palace, and rules together with Terzo. You can walk her path in the "Selection" bot.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RITUALS & RITES ===================== -->
+  <section class="block" id="rituals">
+    <div class="wrap">
+      <div class="section-head">
+        <img class="gru" src="grucifix.png" alt="" aria-hidden="true" />
+        <span class="section-num">IV</span>
+        <h2>Rituals &amp; Rites</h2>
+        <p class="sub">The only real fuel of the Empire.</p>
+      </div>
+
+      <div class="card wide" style="margin-bottom:1.1rem;">
+        <h3>Overview</h3>
+        <p>Rituals are the Empire's only real fuel, powered by genuine faith, prayer, ritual action, sex, pain and blood. Mass sermons and concerts are Rituals too. Humans are a precious, finite resource — not disposable material — so absolute soul sacrifice is a rare, extreme measure reserved only for traitors or emergency feeding of the Great Portal.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card wide">
+          <h3>1 · The Energy Chain</h3>
+          <p><strong>The Catalyst (Human):</strong> ordinary mortals accumulate raw energy during a ritual and release it at the moment of catharsis (orgasm, pain at its limit, religious or concert ecstasy/awe, death).</p>
+          <p><strong>The Conduits (Papa &amp; Ghouls):</strong> Papas and Ghouls do not require catharsis; they naturally absorb, filter and transmit this energy up the chain.</p>
+          <p><strong>The Flow:</strong></p>
+          <div class="flow">
+            <span>Human</span><i>→</i><span>Ghoul / Papa</span><i>→</i><span>The Lord</span>
+          </div>
+          <p><em>A fraction of energy is naturally lost at each step.</em></p>
+        </div>
+
+        <div class="card wide">
+          <h3>2 · The Elect — The Ultimate Vessel</h3>
+          <p>Ordinary humans are burned to ash if exposed to the pure Darkness of a Papa or the Ghouls. The Elect is the sole exception: she can safely absorb their raw Darkness, synthesize and amplify it with her own, and pass it directly to the Dark Lord with zero energy loss.</p>
+          <p>While useless on her own, a single Elect participating in regular rituals generates enough amplified power to sustain the monthly energy requirement of a Great Portal single-handedly. This is why the Elect is so vital: the more energy she accumulates — whether through intense sex, pain, or hours of grueling prayer — the greater the power she transmits to the Lord.</p>
+        </div>
+
+        <div class="card wide">
+          <h3>3 · The Absolute Rules</h3>
+          <p><strong>A ritual conducted without genuine faith or spiritual intent yields zero energy.</strong> (e.g., sex between two ordinary mortals generates no ritual energy — though it is still strongly encouraged, as it leads to procreation and repopulating the world.)</p>
+          <p><strong>A death outside a sacred rite produces no energy.</strong> (e.g., if anyone other than a Ghoul or a Papa were to kill a human — even in the name of the Dark Lord — it would produce nothing. This is a severe heresy. Such an offender would likely be branded a traitor and properly sacrificed by a Papa or a Ghoul.)</p>
+          <p><strong>Every sexual encounter with a Papa or a Ghoul is inherently a ritual of varying strength.</strong></p>
+        </div>
+
+        <div class="card">
+          <h3>Important Formal Rituals</h3>
+          <div class="ritual-block">
+            <h3>The Unsealing</h3>
+            <p>A ritual for the Elect (to become the Papa's Vessel) in 3 stages — the preparation of the soul, the body, and the unveiling of the resource. After that: the Latent Darkness unveiled, the Tether forged, the Lord's gifts received. But the Elect never hears the Lord's voice.</p>
+          </div>
+          <div class="ritual-block">
+            <h3>Nexus Trium Rite</h3>
+            <p>A complex, ancient and exceedingly rare Ritual for special cases when a large amount of energy must be transferred. Created to be conducted by two Papas (previously by other Performers) and a temporary Vessel. Adapted with the appearance of the Elect. Exhausting for all participants.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PAPAS & KEY FIGURES ===================== -->
+  <section class="block" id="figures">
+    <div class="wrap">
+      <div class="section-head">
+        <img class="gru" src="grucifix.png" alt="" aria-hidden="true" />
+        <span class="section-num">V</span>
+        <h2>Papas &amp; Key Figures</h2>
+        <p class="sub">Information is current as of the release of the Unholywood ALT bot.</p>
+      </div>
+
+      <div class="figures">
+        <article class="figure-card">
+          <div class="portrait" aria-hidden="true">N</div>
+          <div>
+            <h3 class="pname">Papa Nihil</h3>
+            <div class="ptitle">Papa Zero · Founder</div>
+            <p>The father of Copia and Perpetua. Deceased long ago. Founder of the Ministry and the very first frontman of Ghost. He acts as "Papa Zero" — despite being the first frontman, he is not included in the official numbering of the Papas.</p>
+          </div>
+        </article>
+
+        <article class="figure-card">
+          <div class="portrait" aria-hidden="true">I·II</div>
+          <div>
+            <h3 class="pname">Primo &amp; Secondo</h3>
+            <div class="ptitle">Papa Emeritus I &amp; II</div>
+            <p>Papa Emeritus I and Papa Emeritus II — the second and third frontmen of Ghost. Brothers of Nihil. Deceased prior to the Purification.</p>
+            <div class="meta">
+              <span class="lbl">Resting Place</span>
+              <strong>Necropolis, deep beneath the Vatican</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="figure-card">
+          <div class="portrait" aria-hidden="true">III</div>
+          <div>
+            <h3 class="pname">Terzo</h3>
+            <div class="ptitle">Papa Emeritus III · The Emperor · The Chosen Son</div>
+            <p>The fourth Ghost frontman, Central Ruler — the most powerful; his power in the Empire is absolute. He rules the Central Domain (Vatican). A charismatic, flamboyant Italian, completely certain that he rightfully holds the throne and that only he can lead the world to a better future.</p>
+            <div class="meta">
+              <span class="lbl">Bloodline</span>
+              <strong>Not blood-related to Nihil's line — the only son of the Dark Lord, born of a mortal mother; the sole one of his divine line.</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="figure-card">
+          <div class="portrait" aria-hidden="true">IV</div>
+          <div>
+            <h3 class="pname">Copia</h3>
+            <div class="ptitle">Cardinal Copia · Papa Emeritus IV</div>
+            <p>Twin brother to Perpetua and son of Sister Imperator. Fourth and fifth frontman of Ghost. Temporarily demoted back to Cardinal by Terzo; currently rules the Eastern Domain (stationed in Tokyo). Soft and kind, he seems to love his rats more than people, which at first glance makes him the weakest of the leaders.</p>
+            <div class="meta">
+              <span class="lbl">Age</span>
+              <strong>Appears 50, really 51 — did not age.</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="figure-card">
+          <div class="portrait" aria-hidden="true">V</div>
+          <div>
+            <h3 class="pname">Perpetua</h3>
+            <div class="ptitle">V (chosen name) · Papa V Perpetua</div>
+            <p>Twin brother to Copia. The sixth — and last — frontman of Ghost; a vampire who rules the Western Domain (Unholywood, stationed in Los Angeles). Ostentatious, a bright provocateur and talented musician who genuinely enjoys the blessings the Purification granted him.</p>
+            <div class="meta">
+              <span class="lbl">Age</span>
+              <strong>Appears 40, really 51 — did not age.</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="figure-card">
+          <div class="portrait" aria-hidden="true">SI</div>
+          <div>
+            <h3 class="pname">Sister Imperator</h3>
+            <div class="ptitle">The Shadow Ruler</div>
+            <p>Deceased prior to the Purification. Mother of Copia and Perpetua, lover of Nihil, and the true shadow ruler of the Ministry. Responsible for the dismissal of the previous Papas. She hated everyone except Copia, in whom she instilled a deep hatred for Terzo.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="grid" style="margin-top:1.2rem;">
+        <div class="card wide">
+          <h3>Traits &amp; Relics</h3>
+          <p>Each Papa possesses his own Darkness, unique Abilities, and one eye with a white iris — the mark of the Lord's Darkness.</p>
+          <p>A Papa rules his own Domain absolutely. In another's, he is a guest of the highest honor.</p>
+          <p>The incorruptible remains of Primo, Secondo, Nihil and Sister Imperator rest in the Necropolis deep beneath the Vatican.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OTHER INFO ===================== -->
+  <section class="block" id="other">
+    <div class="wrap">
+      <div class="section-head">
+        <img class="gru" src="grucifix.png" alt="" aria-hidden="true" />
+        <span class="section-num">VI</span>
+        <h2>Other Info</h2>
+        <p class="sub">The band, the symbol, the hymns and the council.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card wide">
+          <h3>The Band Ghost</h3>
+          <p>A rock/metal band renowned long before the Apocalypse; the Papas were its frontmen (founded by Nihil, Perpetua the last before the Purification). In truth it was a cover for spreading the faith — a vessel through which the Papas and the Ghouls conducted Rituals and groomed their flock. The Papas preached from the stages, and the band's songs became the hymns of the new world. By the Purification the band stood at its peak, millions already devoted to the Lord and Papa. Its concert recordings — true Rituals of energy exchange — are watched in every Parish: a beacon of hope, inspiration and faith.</p>
+        </div>
+
+        <div class="card">
+          <h3>Grucifix</h3>
+          <p>The symbol of the new faith — the letter "G" coiled around an inverted cross. Everyone except the Papas wear them, as pendants or on clothes.</p>
+        </div>
+
+        <div class="card">
+          <h3>The Ministry</h3>
+          <p>Prior to the Purification, a corrupt and bureaucratic Satanic church that utilized concert-"rituals" as an instrument of a global mission to project its ideology onto society and governments. It no longer exists.</p>
+        </div>
+
+        <div class="card">
+          <h3>Hymns</h3>
+          <p>Ghost's music, which once drove stadiums wild, has become the anthem of the new world. Choirs sing it while hauling sacks at construction sites and scrubbing floors with icy water. It is broadcast over loudspeakers regularly.</p>
+          <ul class="hymn-list">
+            <li><span class="who">Terzo's</span><span class="song">He Is</span></li>
+            <li><span class="who">Perpetua's</span><span class="song">Umbra · <em>unofficial:</em> It's a Sin</span></li>
+            <li><span class="who">Copia's</span><span class="song">Rats</span></li>
+          </ul>
+        </div>
+
+        <div class="card wide">
+          <h3>Sovereign Triumvirate</h3>
+          <p>A council of three Papas, held once a year or as needed. The Papas convene in a selected Domain (typically on a rotational basis) and usually travel via transit portals, especially in urgent situations. The meeting lasts between 3 and 6 days, depending on when the established goals are met — reaching a consensus, defining strategy, voting on the election of clergy, and so on.</p>
+        </div>
+      </div>
+
+      <!-- ===================== BOTS ===================== -->
+      <div class="subhead" id="bots"><h3>Bots</h3></div>
+
+      <p class="bot-credit">
+        Made by <a href="https://janitorai.com/profiles/df7eb331-65c1-44e4-9675-fe853c5ba54b_profile-of-autmn-rain" target="_blank" rel="noopener noreferrer">Autmn_Rain</a>
+        · <span class="adult">18+</span> · Adult themes; content warnings are listed inside each bot.
+      </p>
+
+      <div class="minihead">⛧His Dark Queen⛧ — series</div>
+      <div class="grid bot-grid">
+        <div class="card">
+          <span class="tag">Terzo × The Elect · Vatican</span>
+          <h3>Selection bot (plot)</h3>
+          <div class="bot-links">
+            <a class="bot-link" href="https://janitorai.com/characters/f4f2c9fd-30b0-417d-b531-990a951e175a_character-%E2%9B%A7-his-dark-queen%E2%9B%A7-terzo-emeritus" target="_blank" rel="noopener noreferrer">Play on Janitor AI</a>
+            <a class="bot-link" href="https://lorebary.com/content/character/D2328A92" target="_blank" rel="noopener noreferrer">Play on Lorebary</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="tag">Terzo × The Elect · Vatican</span>
+          <h3>Terzo Standalone bot</h3>
+          <div class="bot-links">
+            <a class="bot-link" href="https://janitorai.com/characters/45038453-fc8e-4e1e-84b7-020401520091_character-%E2%9B%A7-his-dark-queen%E2%9B%A7-ii-part-terzo-emeritus" target="_blank" rel="noopener noreferrer">Play on Janitor AI</a>
+            <a class="bot-link" href="https://lorebary.com/content/character/DE07E9A2" target="_blank" rel="noopener noreferrer">Play on Lorebary</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="tag">Terzo × Perpetua × The Elect · Vatican</span>
+          <h3>Nexus Trium (plot)</h3>
+          <div class="bot-links">
+            <a class="bot-link" href="https://janitorai.com/characters/64cc4e17-f707-4e02-859e-06ea60c7d3b8_character-nexus-trium-terzo-emeritus-perpetua" target="_blank" rel="noopener noreferrer">Play on Janitor AI</a>
+            <a class="bot-link" href="https://lorebary.com/content/character/83E273DD" target="_blank" rel="noopener noreferrer">Play on Lorebary</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="tag">Perpetua × The Elect · Unholywood</span>
+          <h3>V bot Selection</h3>
+          <div class="bot-links">
+            <span class="bot-link disabled">Coming soon</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="minihead">Outside the series</div>
+      <div class="grid bot-grid single">
+        <div class="card">
+          <span class="tag">Perpetua · Unholywood · vampire × vampire</span>
+          <h3>V bot ALT</h3>
+          <div class="bot-links">
+            <span class="bot-link disabled">Link coming soon</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="copyright">© 2026 <a href="https://janitorai.com/profiles/df7eb331-65c1-44e4-9675-fe853c5ba54b_profile-of-autmn-rain" target="_blank" rel="noopener noreferrer">@Autmn_Rain</a> · Ghostapocalypse Universe. All original text, worldbuilding and artwork on this site are my own — please don’t copy, repost, or claim them as your own. AI-assisted content is provided as-is; rights to AI-generated material remain with their respective platforms. Ghostapocalypse is a non-commercial fan universe inspired by the band Ghost; Ghost and its characters belong to their respective rights holders.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <img class="gru" src="grucifix.png" alt="" aria-hidden="true" />
+  <div class="fz">Ghostapocalypse Universe</div>
+  <div class="fq">"Live. Love. Be fruitful. Build a world that knows neither shame nor a false God."</div>
+  <div class="fcopy">© 2026 @Autmn_Rain · Original text and artwork — please don’t copy, repost, or claim them as your own.</div>
+</footer>
+
+<!-- ===================== LIGHTBOX ===================== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image">
+  <img src="" alt="" id="lightbox-img" />
+  <div class="cap" id="lightbox-cap"></div>
+</div>
+
+<script>
+  (function () {
+    var lb = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lightbox-img');
+    var lbCap = document.getElementById('lightbox-cap');
+
+    document.querySelectorAll('.map-frame').forEach(function (frame) {
+      frame.addEventListener('click', function () {
+        var img = frame.querySelector('img');
+        if (!img) return;
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lbCap.textContent = frame.dataset.title || '';
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function close() {
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+    }
+    lb.addEventListener('click', close);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lb.classList.contains('open')) close();
+    });
+  })();
+</script>
+
 </body>
 </html>

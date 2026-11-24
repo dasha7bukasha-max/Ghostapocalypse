@@ -1,0 +1,421 @@
+/* ============================================================
+   Western Domain · Unholywood — "neon violet" theme
+   Loaded only by western.html (body.western-theme).
+   Overrides styles.css without touching it, so index / central /
+   eastern pages keep the original red gothic look.
+   ============================================================ */
+
+.western-theme {
+  --bg: #08040e;
+  --bg-2: #0f0718;
+  --panel: #150a22;
+  --panel-2: #1d0d2e;
+  --ink: #efe4fb;
+  --ink-dim: #bda9d4;
+  --ink-faint: #8874a1;
+  --red: #b424f0;
+  --red-bright: #e878ff;
+  --red-deep: #5e0b8f;
+  --gold: #ffa6ef;
+  --line: rgba(180, 36, 255, 0.34);
+  --line-soft: rgba(180, 36, 255, 0.16);
+  --shadow: 0 20px 60px rgba(40, 0, 70, 0.65);
+
+  /* local palette */
+  --w-violet: #b424f0;
+  --w-violet-lt: #e878ff;
+  --w-hot: #ff3ad5;
+  --w-deep: #5e0b8f;
+  --w-glow: 0 0 18px rgba(180, 60, 255, 0.45);
+  --w-glow-hot: 0 0 22px rgba(255, 60, 215, 0.4);
+}
+
+/* ------------------------------ Backdrop ------------------------------ */
+
+.western-theme {
+  background:
+    radial-gradient(1100px 720px at 50% -12%, rgba(160, 36, 240, 0.22), transparent 62%),
+    radial-gradient(900px 620px at 100% 102%, rgba(255, 58, 213, 0.10), transparent 60%),
+    radial-gradient(900px 620px at -5% 45%, rgba(110, 24, 190, 0.16), transparent 58%),
+    var(--bg);
+}
+
+/* faint CRT scanlines — the "80s screen" grain */
+.western-theme::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.03) 0 1px,
+    transparent 1px 3px
+  );
+  mix-blend-mode: overlay;
+}
+
+/* static grucifix watermark instead of the rotating pentagram */
+.western-theme .bg-pentagram {
+  width: min(78vh, 78vw);
+  height: min(78vh, 78vw);
+  background-image: url("Western%20Domain%20info%20and%20photo/V%27s%20grucifix%20type.png");
+  opacity: 0.11;
+  animation: none;
+}
+
+/* soft neon halo around the watermark */
+.western-theme .bg-pentagram::after {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  background: radial-gradient(circle, rgba(180, 36, 255, 0.16), transparent 62%);
+  pointer-events: none;
+}
+
+.western-theme ::selection {
+  background: rgba(180, 36, 255, 0.45);
+  color: #fff;
+}
+
+.western-theme :focus-visible {
+  outline: 1px solid var(--w-violet-lt);
+  outline-offset: 3px;
+}
+
+/* ------------------------------ Header / nav ------------------------------ */
+/* Symbol stays the common grucifix, only its glow goes violet on this page. */
+
+.western-theme .topbar {
+  background: rgba(8, 4, 14, 0.85);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03), 0 10px 40px rgba(90, 0, 150, 0.18);
+}
+
+.western-theme .brand .gru {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(235deg) drop-shadow(0 0 5px rgba(200, 90, 255, 0.85));
+}
+
+.western-theme .nav a:hover {
+  color: var(--w-violet-lt);
+  border-color: var(--w-violet);
+}
+
+.western-theme .nav a.active {
+  color: var(--w-violet-lt);
+  border-color: var(--w-violet);
+  text-shadow: 0 0 12px rgba(200, 90, 255, 0.7);
+}
+
+.western-theme .back-link {
+  border-color: var(--line);
+  background: rgba(180, 36, 255, 0.05);
+}
+
+.western-theme .back-link:hover {
+  color: var(--w-violet-lt);
+  border-color: var(--w-violet);
+  box-shadow: var(--w-glow);
+}
+
+/* ------------------------------ Section head ------------------------------ */
+
+.western-theme .section-head {
+  position: relative;
+}
+
+.western-theme .section-head::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -18%;
+  width: min(640px, 96%);
+  height: 150%;
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, rgba(160, 40, 255, 0.20), transparent 72%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* V's grucifix type (2) — the domain's own sigil */
+.western-theme .section-head .gru {
+  width: clamp(46px, 7vw, 66px);
+  height: auto;
+  margin: 0 auto 1rem;
+  opacity: 1;
+  /* keep the original artwork's own colours: no invert, no blend mode */
+  mix-blend-mode: normal;
+  filter:
+    brightness(1.08)
+    saturate(1.2)
+    drop-shadow(0 0 10px rgba(205, 90, 255, 0.85))
+    drop-shadow(0 0 30px rgba(150, 30, 240, 0.55));
+}
+
+.western-theme .section-head h2 {
+  background: linear-gradient(180deg, #ffffff 0%, #f3defd 34%, #d478ff 68%, #9c25e8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 22px rgba(180, 60, 255, 0.45));
+}
+
+.western-theme .section-head .sub {
+  color: var(--ink-faint);
+}
+
+.western-theme .section-num {
+  color: var(--w-violet-lt);
+  text-shadow: 0 0 14px rgba(200, 90, 255, 0.7);
+}
+
+/* ------------------------------ Intro / prose ------------------------------ */
+
+.western-theme .lede-block {
+  position: relative;
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(60, 8, 100, 0.55), rgba(20, 8, 34, 0.75));
+  box-shadow: var(--shadow), inset 0 0 60px rgba(120, 20, 200, 0.18);
+}
+
+.western-theme .lede-block p {
+  color: var(--ink-dim);
+}
+
+.western-theme .prose {
+  color: var(--ink-dim);
+}
+
+.western-theme .quote {
+  border-left: 2px solid var(--w-violet);
+  background: linear-gradient(90deg, rgba(180, 36, 255, 0.14), rgba(180, 36, 255, 0.03));
+  color: var(--ink);
+  box-shadow: inset 0 0 30px rgba(180, 36, 255, 0.12);
+}
+
+/* ------------------------------ Sub-headings ------------------------------ */
+
+.western-theme .subhead::after {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--w-violet), var(--w-hot), var(--w-violet), transparent);
+  box-shadow: 0 0 14px rgba(180, 60, 255, 0.6);
+}
+
+.western-theme .subhead h3 {
+  background: linear-gradient(180deg, #ffffff 0%, #eed8ff 45%, #c968ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 16px rgba(180, 60, 255, 0.4));
+}
+
+.western-theme .subject-head h4 {
+  color: var(--w-violet-lt);
+  text-shadow: 0 0 16px rgba(200, 90, 255, 0.55);
+}
+
+.western-theme .subject-head p {
+  color: var(--ink-faint);
+}
+
+.western-theme .minihead {
+  color: #c9a2e6;
+  text-shadow: 0 0 10px rgba(180, 60, 255, 0.25);
+}
+
+/* ------------------------------ Photos ------------------------------ */
+
+.western-theme .photo-frame {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #0a0412;
+  box-shadow:
+    0 14px 40px rgba(28, 0, 50, 0.65),
+    0 0 0 1px rgba(255, 255, 255, 0.02),
+    0 0 26px rgba(140, 20, 220, 0.14);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.western-theme .photo-frame:hover {
+  border-color: rgba(205, 90, 255, 0.75);
+  box-shadow:
+    0 18px 50px rgba(28, 0, 50, 0.75),
+    0 0 34px rgba(180, 36, 255, 0.35);
+}
+
+/* nested frames stay flat inside their own cards */
+.western-theme .person-card .photo-frame,
+.western-theme .loc-card .photo-frame {
+  box-shadow: none;
+}
+
+/* disco sheen on hover */
+.western-theme .photo-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 60, 215, 0.16), transparent 42%, rgba(180, 36, 255, 0.10));
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+
+.western-theme .photo-frame:hover::after {
+  opacity: 1;
+}
+
+/* ------------------------------ Cards ------------------------------ */
+
+.western-theme .card {
+  background: linear-gradient(180deg, var(--panel-2), var(--panel));
+  border: 1px solid var(--line-soft);
+}
+
+.western-theme .card:hover {
+  border-color: var(--line);
+  box-shadow: 0 0 26px rgba(180, 36, 255, 0.25);
+}
+
+.western-theme .card h3 {
+  color: var(--w-violet-lt);
+  text-shadow: 0 0 14px rgba(200, 90, 255, 0.5);
+}
+
+.western-theme .card p {
+  color: var(--ink-dim);
+}
+
+.western-theme .card .tag {
+  color: var(--gold);
+  border-color: rgba(255, 166, 239, 0.45);
+  background: rgba(255, 58, 213, 0.06);
+}
+
+/* ------------------------------ Discography ------------------------------ */
+
+.western-theme .disk li {
+  border: 1px solid var(--line-soft);
+  border-left: 2px solid var(--w-violet);
+  background: linear-gradient(90deg, rgba(180, 36, 255, 0.10), rgba(180, 36, 255, 0.02));
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.western-theme .disk li:hover {
+  border-left-color: var(--w-hot);
+  transform: translateX(3px);
+  box-shadow: -4px 0 22px rgba(180, 36, 255, 0.25);
+}
+
+.western-theme .disk .yr {
+  color: var(--gold);
+  text-shadow: 0 0 10px rgba(255, 120, 240, 0.35);
+}
+
+.western-theme .disk .rel em {
+  color: var(--ink-faint);
+}
+
+/* ------------------------------ Song pills ------------------------------ */
+
+.western-theme .pills li {
+  border: 1px solid var(--line);
+  background: rgba(180, 36, 255, 0.09);
+  color: var(--ink-dim);
+  transition: color 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.western-theme .pills li:hover {
+  color: #fff;
+  border-color: var(--w-violet-lt);
+  box-shadow: 0 0 18px rgba(180, 60, 255, 0.45);
+  transform: translateY(-1px);
+}
+
+/* ------------------------------ People / siblings ------------------------------ */
+
+.western-theme .person-card {
+  background: linear-gradient(180deg, var(--panel-2), var(--panel));
+  border: 1px solid var(--line-soft);
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+.western-theme .person-card:hover {
+  border-color: var(--line);
+  box-shadow: 0 0 26px rgba(180, 36, 255, 0.28);
+  transform: translateY(-2px);
+}
+
+.western-theme .person-card .role {
+  color: var(--w-violet-lt);
+  text-shadow: 0 0 12px rgba(200, 90, 255, 0.55);
+}
+
+/* ------------------------------ Floors ------------------------------ */
+
+.western-theme .floors li {
+  border-left: 2px solid var(--w-violet);
+  background: linear-gradient(90deg, rgba(180, 36, 255, 0.14), transparent);
+  color: var(--ink-dim);
+}
+
+.western-theme .floors .fl {
+  color: var(--w-violet-lt);
+  text-shadow: 0 0 12px rgba(200, 90, 255, 0.5);
+}
+
+/* ------------------------------ Location cards ------------------------------ */
+
+.western-theme .loc-card {
+  background: linear-gradient(180deg, var(--panel-2), var(--panel));
+  border: 1px solid var(--line-soft);
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.western-theme .loc-card:hover {
+  border-color: var(--line);
+  box-shadow: 0 0 30px rgba(180, 36, 255, 0.28);
+}
+
+.western-theme .loc-card .photo-frame {
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.western-theme .loc-card h4 {
+  color: var(--w-violet-lt);
+  text-shadow: 0 0 14px rgba(200, 90, 255, 0.5);
+}
+
+/* ------------------------------ Footer ------------------------------ */
+
+.western-theme footer {
+  border-top: 1px solid var(--line-soft);
+  background: linear-gradient(180deg, transparent, rgba(90, 10, 150, 0.14));
+}
+
+.western-theme footer .gru {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(235deg) drop-shadow(0 0 6px rgba(200, 90, 255, 0.6));
+}
+
+/* ------------------------------ Lightbox ------------------------------ */
+
+.western-theme .lightbox {
+  background: rgba(5, 1, 12, 0.95);
+}
+
+.western-theme .lightbox img {
+  border: 1px solid var(--line);
+  box-shadow: 0 0 90px rgba(180, 36, 255, 0.4);
+}
+
+/* ------------------------------ Motion preferences ------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  .western-theme .disk li:hover,
+  .western-theme .pills li:hover,
+  .western-theme .person-card:hover {
+    transform: none;
+  }
+}
