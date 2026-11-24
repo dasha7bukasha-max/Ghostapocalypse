@@ -905,7 +905,7 @@
   /* ---------- Central Domain theming ---------- */
   /* Terzo's grucifix as a static page watermark */
   .central-page .bg-pentagram {
-    background-image: url("Central%20Domain/Grucifix%20Terzo%20Era%20gold.png");
+    background-image: url("Central%20Domain/Grucifix%20Terzo%20Era%20gold.webp");
     animation: none;
     opacity: 0.09;
   }
@@ -923,7 +923,7 @@
   /* ---------- Eastern Domain theming ---------- */
   /* The IV era grucifix as a static page watermark */
   .eastern-page .bg-pentagram {
-    background-image: url("Eastern/Grucifix%20IV%20Era%20red.png");
+    background-image: url("Eastern/Grucifix%20IV%20Era%20red.webp");
     animation: none;
     opacity: 0.09;
     width: min(100vh, 100vw);
