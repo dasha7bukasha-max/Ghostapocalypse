@@ -63,7 +63,7 @@
       <div class="subject-head"><h4>Papa Emeritus III</h4></div>
       <div class="photo-single">
         <div class="photo-frame" data-title="Papa Emeritus III">
-          <img src="Central%20Domain/TERZO.webp" alt="Papa Emeritus III — Terzo" />
+          <img src="Central%20Domain/TERZO-preview.webp" data-full-src="Central%20Domain/TERZO.webp" alt="Papa Emeritus III — Terzo" />
         </div>
       </div>
 
@@ -74,7 +74,7 @@
       </div>
       <div class="photo-single">
         <div class="photo-frame" data-title="Omega">
-          <img src="Central%20Domain/Omega.webp" alt="Omega, Terzo's right hand" />
+          <img src="Central%20Domain/Omega-preview.webp" data-full-src="Central%20Domain/Omega.webp" alt="Omega, Terzo's right hand" />
         </div>
       </div>
 
@@ -83,21 +83,21 @@
       <div class="people">
         <article class="person-card">
           <div class="photo-frame" data-title="Dolores">
-            <img src="Central%20Domain/Dolores.webp" alt="Dolores" />
+            <img src="Central%20Domain/Dolores-preview.webp" data-full-src="Central%20Domain/Dolores.webp" alt="Dolores" />
           </div>
           <h4>Dolores</h4>
           <div class="role">Head Sister of Sin</div>
         </article>
         <article class="person-card">
           <div class="photo-frame" data-title="Beata and Gloria">
-            <img src="Central%20Domain/Beata%20and%20Gloria.webp" alt="Beata and Gloria" />
+            <img src="Central%20Domain/Beata%20and%20Gloria-preview.webp" data-full-src="Central%20Domain/Beata%20and%20Gloria.webp" alt="Beata and Gloria" />
           </div>
           <h4>Beata &amp; Gloria</h4>
           <div class="role">Junior Sisters of Sin</div>
         </article>
         <article class="person-card">
           <div class="photo-frame" data-title="Francesca">
-            <img src="Central%20Domain/Francesca.webp" alt="Francesca" />
+            <img src="Central%20Domain/Francesca-preview.webp" data-full-src="Central%20Domain/Francesca.webp" alt="Francesca" />
           </div>
           <h4>Francesca</h4>
           <div class="role">Senior Sister of Sin</div>
@@ -143,7 +143,7 @@
       <p class="prose">Terzo’s massive black raven, which he nursed back to health himself.</p>
       <div class="photo-single">
         <div class="photo-frame" data-title="Nevermore">
-          <img src="Central%20Domain/Nevermore.webp" alt="Nevermore, Terzo's raven" />
+          <img src="Central%20Domain/Nevermore-preview.webp" data-full-src="Central%20Domain/Nevermore.webp" alt="Nevermore, Terzo's raven" />
         </div>
       </div>
 
@@ -261,10 +261,10 @@
       <div class="subject-head"><h4>Papa’s Private Chambers</h4></div>
       <div class="gallery" style="margin-top:1rem;">
         <div class="photo-frame" data-title="Papa’s Private Chambers">
-          <img src="Central%20Domain/Papa's%20Private%20Chambers.webp" alt="Papa's private chambers" />
+          <img src="Central%20Domain/Papa's%20Private%20Chambers-preview.webp" data-full-src="Central%20Domain/Papa's%20Private%20Chambers.webp" alt="Papa's private chambers" />
         </div>
         <div class="photo-frame" data-title="Papa’s Private Chambers">
-          <img src="Central%20Domain/Papa's%20Private%20Chambers%202.webp" alt="Papa's private chambers, second view" />
+          <img src="Central%20Domain/Papa's%20Private%20Chambers%202-preview.webp" data-full-src="Central%20Domain/Papa's%20Private%20Chambers%202.webp" alt="Papa's private chambers, second view" />
         </div>
       </div>
 
@@ -356,7 +356,7 @@
       frame.addEventListener('click', function () {
         var img = frame.querySelector('img');
         if (!img) return;
-        lbImg.src = img.src;
+        lbImg.src = img.dataset.fullSrc || img.src;
         lbImg.alt = img.alt;
         lbCap.textContent = frame.dataset.title || '';
         lb.classList.add('open');
